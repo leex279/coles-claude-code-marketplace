@@ -1,0 +1,8 @@
+{
+  "name": "context-engineering-plugin",
+  "description": "Context Engineering Intro plugin for Claude Code featuring PRP (Product Requirements Prompt) workflow, specialized documentation and validation agents, and custom commands for AI-assisted development",
+  "version": "1.0.0",
+  "author": {
+    "name": "Dynamous"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "coles-marketplace",
+  "owner": {
+    "name": "Dynamous"
+  },
+  "plugins": [
+    {
+      "name": "context-engineering-plugin",
+      "source": "./context-engineering-plugin",
+      "description": "Context Engineering plugin for Claude Code with PRP workflow, specialized agents, and custom commands"
+    }
+  ]
+}
