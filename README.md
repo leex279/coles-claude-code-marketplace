@@ -60,21 +60,25 @@ coles-marketplace/
 
 ## Quick Start
 
-### Method 1: Install from Marketplace (Recommended)
+### Installation Steps
 
-Install the marketplace from GitHub:
+1. **Add the marketplace from GitHub:**
 
 ```
 /plugin marketplace add leex279/coles-claude-code-marketplace
 ```
 
-Then install the plugin from the marketplace:
+2. **Install the plugin from the marketplace:**
 
 ```
-/plugin add context-engineering-plugin
+/plugin install context-engineering-plugin@coles-claude-code-marketplace
 ```
 
-Verify the marketplace is added:
+3. **Restart Claude Code to load the plugin**
+
+Exit and restart your Claude Code session.
+
+4. **Verify the installation:**
 
 ```
 /plugin marketplace list
@@ -82,13 +86,11 @@ Verify the marketplace is added:
 
 You should see `coles-claude-code-marketplace` in the list.
 
-### Method 2: Install Plugin Directly
-
-Skip the marketplace and install just the plugin from GitHub:
-
 ```
-/plugin add leex279/coles-claude-code-marketplace/context-engineering-plugin
+/plugin list
 ```
+
+You should see `context-engineering-plugin` in the list of installed plugins.
 
 ### Verify Installation
 
@@ -104,12 +106,13 @@ Installed plugins:
   - context-engineering-plugin v1.0.0
 ```
 
-## Installation Methods Comparison
+## Installation Command Reference
 
-| Method | Command | Use Case |
-|--------|---------|----------|
-| **From Marketplace** | `/plugin marketplace add leex279/coles-claude-code-marketplace` then `/plugin add context-engineering-plugin` | Centralized marketplace with multiple plugins |
-| **Direct Install** | `/plugin add leex279/coles-claude-code-marketplace/context-engineering-plugin` | Quick install of single plugin |
+| Step | Command | Purpose |
+|------|---------|---------|
+| 1. Add Marketplace | `/plugin marketplace add leex279/coles-claude-code-marketplace` | Register the marketplace with Claude Code |
+| 2. Install Plugin | `/plugin install context-engineering-plugin@coles-claude-code-marketplace` | Install the plugin from the marketplace |
+| 3. Verify Installation | `/plugin list` | Check that the plugin is installed |
 
 ## Plugin Features
 
@@ -450,7 +453,7 @@ Initializes a project with context engineering structure.
 2. Reinstall the plugin:
    ```
    /plugin remove context-engineering-plugin
-   /plugin add leex279/context-engineering-plugin
+   /plugin install context-engineering-plugin@coles-claude-code-marketplace
    ```
 
 3. Check marketplace connection:
@@ -478,16 +481,17 @@ Initializes a project with context engineering structure.
 
 ### Marketplace Installation Fails
 
-**Issue:** `/plugin marketplace add leex279/coles-marketplace` fails
+**Issue:** `/plugin marketplace add leex279/coles-claude-code-marketplace` fails
 
 **Solutions:**
 1. Ensure GitHub repository is accessible
-2. Try installing plugin directly instead:
+2. Check your network connection
+3. Verify the repository URL is correct: `leex279/coles-claude-code-marketplace`
+4. Try removing and re-adding:
    ```
-   /plugin add leex279/context-engineering-plugin
+   /plugin marketplace remove coles-claude-code-marketplace
+   /plugin marketplace add leex279/coles-claude-code-marketplace
    ```
-3. Check your network connection
-4. Verify the repository URL is correct
 
 ### Hooks Not Running
 
@@ -583,20 +587,17 @@ git push -u origin main
 
 2. **Share Installation Commands:**
 
-Users can install your marketplace in Claude Code:
-```
+Users can install your marketplace and plugins in Claude Code:
+
+```bash
+# Step 1: Add the marketplace
 /plugin marketplace add your-org/your-marketplace
+
+# Step 2: Install plugins from the marketplace
+/plugin install your-plugin-name@your-marketplace
 ```
 
-Then install plugins from your marketplace:
-```
-/plugin add your-plugin-name
-```
-
-Or install a plugin directly:
-```
-/plugin add your-org/your-plugin-name
-```
+**Note:** Direct plugin installation without adding the marketplace first is not supported. Users must add the marketplace before installing plugins.
 
 3. **Create Marketplace README:**
 - Document all plugins
